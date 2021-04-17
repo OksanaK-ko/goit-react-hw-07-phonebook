@@ -1,19 +1,24 @@
 {
-  "contacts": [{
+  "contacts": [
+    {
       "name": "Oksana Kochenko",
-      "number": 123456
-  },
-  {
+      "number": 123456,
+      "id": 1
+    },
+    {
       "name": "Aleksey Boyko",
-      "number": 456789
-  },
-  {
+      "number": 456789,
+      "id": 2
+    },
+    {
       "name": "Kira Smit",
-      "number": 789456
-  },
-  {
+      "number": 789456,
+      "id": 3
+    },
+    {
       "name": "Yana Milkie",
-      "number": 456963
-  }
+      "number": 456963,
+      "id": 4
+    }
   ]
 }

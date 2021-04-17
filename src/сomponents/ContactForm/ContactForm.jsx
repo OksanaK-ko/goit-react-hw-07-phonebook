@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import shortid from 'shortid'
-import contactsActions from '../../redux/contacts/contacts-actions';
+// import shortid from 'shortid'
+import contactsOperations from '../../redux/contacts/contacts-operations';
 import { CSSTransition } from 'react-transition-group';
 import Alert from '../Alert/Alert';
 import '../../css/animation.css';
@@ -15,8 +15,8 @@ class ContactForm extends Component {
     error: false
     }
 
-    nameInputId = shortid.generate();
-    numberInputId = shortid.generate();
+    // nameInputId = shortid.generate();
+    // numberInputId = shortid.generate();
 
     handleChange = (e) => {
     const { name, value } = e.currentTarget;
@@ -108,7 +108,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    onSubmit: data => dispatch(contactsActions.addContact(data))
+    onSubmit: data => dispatch(contactsOperations.addContact(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
