@@ -2,6 +2,8 @@ import React from 'react';
 import ContactForm from '../ContactForm/ContactForm';
 import ContactList from '../ContactList/ContactList';
 import Filter from '../Filter/Filter';
+import { connect } from 'react-redux';
+import contactsOperations from '../../redux/contacts/contacts-operations';
 import s from './App.module.css';
 import { CSSTransition } from 'react-transition-group';
 import '../../css/animation.css';
@@ -23,4 +25,8 @@ const App = () => (
   </div>
 );
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  fetchContacts: () => dispatch(contactsOperations.fetchContact()),
+});
+
+export default connect(null, mapDispatchToProps)(App);
