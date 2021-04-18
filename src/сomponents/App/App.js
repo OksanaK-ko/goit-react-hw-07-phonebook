@@ -3,8 +3,7 @@ import ContactForm from '../ContactForm/ContactForm';
 import ContactList from '../ContactList/ContactList';
 import Filter from '../Filter/Filter';
 import { connect } from 'react-redux';
-import contactsOperations from '../../redux/contacts/contacts-operations';
-// import contactsSelectors from '../../redux/contacts/contacts-selectors';
+import { contactsOperations } from '../../redux/contacts';
 import s from './App.module.css';
 import { CSSTransition } from 'react-transition-group';
 import '../../css/animation.css';
@@ -25,10 +24,6 @@ const App = () => (
     </CSSTransition>
   </div>
 );
-
-// const mapStateToProps = state => ({
-//   isLoadingContacts: contactsSelectors.getLoading(state),
-// });
 
 const mapDispatchToProps = dispatch => ({
   fetchContacts: () => dispatch(contactsOperations.fetchContact()),

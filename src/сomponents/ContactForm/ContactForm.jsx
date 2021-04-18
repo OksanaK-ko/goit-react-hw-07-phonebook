@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 // import shortid from 'shortid'
-import contactsOperations from '../../redux/contacts/contacts-operations';
-import contactsSelectors from '../../redux/contacts/contacts-selectors';
+import { contactsOperations, contactsSelectors } from '../../redux/contacts';
 import { CSSTransition } from 'react-transition-group';
 import Alert from '../Alert/Alert';
 import '../../css/animation.css';
@@ -42,7 +41,7 @@ class ContactForm extends Component {
                         error: false,
                     };
                 });
-            }, 2500);
+            }, 1500);
             return;
         }
         this.props.onSubmit(this.state);
