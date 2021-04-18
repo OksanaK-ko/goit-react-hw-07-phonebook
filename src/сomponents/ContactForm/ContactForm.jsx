@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 // import shortid from 'shortid'
 import contactsOperations from '../../redux/contacts/contacts-operations';
+import contactsSelectors from '../../redux/contacts/contacts-selectors';
 import { CSSTransition } from 'react-transition-group';
 import Alert from '../Alert/Alert';
 import '../../css/animation.css';
@@ -85,7 +86,8 @@ class ContactForm extends Component {
                                   />
                               </label>
                               <button className={s.button} type="submit">Add contact</button>
-                          </div>
+                        {this.props.isLoadingContacts && <h1>Loading...</h1>}    
+                      </div>
                       </form >
                   </div>
                 
@@ -104,7 +106,8 @@ ContactForm.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-    contacts: state.contacts.items,
+    contacts: contactsSelectors.getVisibleContacts(state),
+       isLoadingContacts: contactsSelectors.getLoading(state)
 })
 
 const mapDispatchToProps = dispatch => ({

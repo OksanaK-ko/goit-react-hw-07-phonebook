@@ -41,6 +41,7 @@ const deleteContact = contactId => dispatch => {
     .then(() => dispatch(deleteContactSuccess(contactId)))
     .catch(error => dispatch(deleteContactError(error)));
 };
+
 export default {
   fetchContact,
   addContact,
